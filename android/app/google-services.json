@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "329566334310",
+    "firebase_url": "https://appreact-8b27a-default-rtdb.firebaseio.com",
+    "project_id": "appreact-8b27a",
+    "storage_bucket": "appreact-8b27a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329566334310:android:37817795e06b464be2aca7",
+        "android_client_info": {
+          "package_name": "com.mach.appReact"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "329566334310-j32r4cu75mqhrbfrg4mkrnebvrjdcvbu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mach.appReact",
+            "certificate_hash": "aae5b1b450bd45e22abfb2e89a88bcaea95ef98c"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4SoMK_yT-8yMpH72-tYcfNGI8wrwgf94"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
