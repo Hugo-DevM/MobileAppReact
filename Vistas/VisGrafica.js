@@ -1,14 +1,50 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { View, Text, ActivityIndicator, FlatList } from 'react-native';
+import firebase from '../BDatos/Realtime'
+const App = () => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-const VisGrafica = (props) => {
+  useEffect(() => {
+    const database = firebase.database();
+    const reference = database.ref('/Raiz/temperatura');
+
+    const onDataChange = snapshot => {
+      const dataArray = [];
+      snapshot.forEach(childSnapshot => {
+        dataArray.push({
+          key: childSnapshot.key,
+          valor:childSnapshot.val(),
+        });
+      });
+      setData(dataArray);
+      setLoading(false);
+    };
+
+    reference.on('value', onDataChange);
+
+    // Cleanup subscription on unmount
+    return () => reference.off('value', onDataChange);
+  }, []);
+
+  if (loading) {
+    return <ActivityIndicator size="large" color="#0000ff" />;
+  }
+
   return (
     <View>
-      <Text>VisGrafica</Text>
+       <View>
+        <FlatList
+          data={data}
+          renderItem={({ item }) => (
+            <View>
+              <Text style={{padding:30}}>{item.key}: {JSON.stringify(item)}</Text>
+            </View>
+          )}
+        />
+      </View>
     </View>
-  )
-}
+  );
+};
 
-export default VisGrafica
-
-const styles = StyleSheet.create({})
+export default App;
