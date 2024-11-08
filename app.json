@@ -12,17 +12,29 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "edu.cvcr.app"
+      "package": "edu.cvcr.app",
+      "runtimeVersion": "1.0.0"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8f53906d-00f0-49c8-b0ed-0403a6ed0b27"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/8f53906d-00f0-49c8-b0ed-0403a6ed0b27"
     }
   }
 }

@@ -13,6 +13,7 @@ import VistaAltaAlumno from './VisAltaAlumno';
 import VisFoto from './visFoto';
 import VisEditarAlumno from './VisEditarAlumno';
 import VisMapa from './VisMapa';
+import VisMapDireccion from './VisMapDireccion'
 
 const Drawer = createDrawerNavigator();
 
@@ -101,6 +102,13 @@ const DrawerApp = () => {
       <Drawer.Screen
         name="VisM"
         component={VisMapa}
+        options={{
+          drawerItemStyle:{display:'none'}
+        }}
+      />
+      <Drawer.Screen
+        name="VisMapDireccion"
+        component={VisMapDireccion}
         options={{
           drawerItemStyle:{display:'none'}
         }}
